@@ -35,6 +35,10 @@ bytes private SIGNATURE = hex"e6daba7e95f9099d91a9302ad015d956e1798978b0632a0eb8
 ```
 
 Using the above signature we can then do `make claim-local` which would effectively run the transaction using one address that is using the signature of the other address to allow them to claim airdrop on their behalf (pay for their fees - the airdrop is still going to be received by the address that provided the signature).
+9) Lastly, we can verify that the signer address received the airdrop and not the one that sent `claim` transaction by running the following:
+```
+cast call AIRDROP_TOKEN_ADDRESS "balanceOf(address)" SIGNER_ADDRESS
+```
 
 ## TODO list
 
